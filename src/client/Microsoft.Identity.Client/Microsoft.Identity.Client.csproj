@@ -25,6 +25,60 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD_RUNTIME</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="TokenCacheProviders\Distributed\MsalDistributedTokenCacheAdapter.cs" />
+    <Compile Include="TokenCacheProviders\Distributed\MsalDistributedTokenCacheAdapterOptions.cs" />
+    <Compile Include="TokenCacheProviders\IMsalTokenCacheProvider.cs" />
+    <Compile Include="TokenCacheProviders\MsalAbstractTokenCacheProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ReferenceAssemblyProjectReference Include="..\Microsoft.Identity.Client.Ref\Microsoft.Identity.Client.Ref.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid10.0'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid9.0'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'xamarinmac20'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>  
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.iOS10'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1'">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions">
+      <Version>3.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options">
+      <Version>3.1.9</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
